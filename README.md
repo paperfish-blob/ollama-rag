@@ -54,5 +54,12 @@ Config lives in [rag/config.py](rag/config.py) (defaults < env vars like `RAG_CH
 **Key idea:** the model is stateless. "Memory" is a list of messages that we resend in full on every
 turn, so tokens sent per turn grow, and the context window (`num_ctx`) is the ceiling.
 
+Full write-up with worked exercises: [stages/stage-1-cli-chat.md](stages/stage-1-cli-chat.md)
+
+## Stage notes
+Each stage has a standard note in [stages/](stages/): concept, run commands, what you learned, and
+ready-to-run exercises with example output. They follow the template in
+[.claude/skills/stage-handoff/template.md](.claude/skills/stage-handoff/template.md).
+
 ## Stages to come
 2 Ingest · 3 Retrieve & answer · 4 Citations · 5 Tool calling · 6 Evaluate · 7 Web UI

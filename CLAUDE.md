@@ -5,6 +5,8 @@
 - Next: Stage 2 (wait for the user to say "next")
 - Decisions so far: models = `llama3.2:3b` (small), `llama3.1:8b` (large + tool calling), `nomic-embed-text` (embeddings, to pull at Stage 2). Machine: MacBook Pro M4 Pro, 24 GB. Python 3.12 via `uv`.
 - Update this section at the end of every stage.
+- Stage start and finish follow the project skill `stage-handoff` (`.claude/skills/stage-handoff/`). Each stage gets a note in `stages/` with generic (non-trading) default exercises and real captured output.
+- Do not `git commit` or `git push` until I ask. Show me the changes first.
 
 ## Who I am and how to work with me
 I'm a Product Owner with full-stack experience (Kotlin/Spring, TypeScript, some Python).

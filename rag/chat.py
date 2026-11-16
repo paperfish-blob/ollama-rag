@@ -4,6 +4,7 @@ The key idea: the model has NO memory. Every turn we resend the entire
 conversation so far as a list of messages. "Memory" == this list.
 """
 
+import httpx  # installed as a dependency of the ollama library
 import ollama
 
 from rag.config import Config
@@ -77,7 +78,9 @@ def run_chat(cfg: Config) -> None:
             history.pop()  # don't keep a user turn that never got an answer
             print(f"\n[ollama error: {e.error}]\n")
             continue
-        except ConnectionError:
+        # httpx.ConnectError is what the ollama library actually raises when the server
+        # is down. It is NOT a subclass of the built-in ConnectionError, so catch both.
+        except (ConnectionError, httpx.ConnectError):
             history.pop()
             print("\n[cannot reach Ollama - is it running? try: ollama serve]\n")
             continue
